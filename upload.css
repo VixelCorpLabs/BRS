@@ -1,5 +1,5 @@
 body {
-    background-color: #f5f5f5; 
+    background-color: #f5f5f5;
     margin: 0;
     scroll-behavior: smooth;
 }
@@ -25,26 +25,24 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
-    max-width: 1200px; /* Limit container width */
-    margin: 0 auto; /* Center container */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
-    color: white; /* Set text color to white */
-    font-size: 22px; /* Set font size to a little bigger */
+    color: white;
+    font-size: 22px;
     font-family: sans-serif;
     font-weight: bold;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
 }
 
 .logo:hover,
 .logo:active,
 .logo:focus,
 a {
-    text-decoration: none; /* Remove underline on hover, active, focus, and normal state */
+    text-decoration: none;
 }
-
-
 
 .menu-toggle {
     display: none;
@@ -67,32 +65,30 @@ a {
     padding: 10px 20px;
 }
 
-/* Burger menu icon */
 .menu-toggle .burger {
     font-size: 24px;
     cursor: pointer;
 }
 
-/* Mobile View */
 @media (max-width: 1024px) {
     .menu-toggle {
         display: block;
     }
 
-     .menu-items {
+    .menu-items {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
-        background-color:  rgba(62, 175, 241, 0.849);
+        background-color: rgba(62, 175, 241, 0.849);
         width: 100%;
         padding: 10px 0;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.040);
-        backdrop-filter: blur(10px); /* Adjust the blur intensity */
-        -webkit-backdrop-filter: blur(10px); /* For Safari */
-        transition: top 0.3s, opacity 0.3s; /* Include opacity in transition */
-        opacity: 0; /* Initial opacity */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: top 0.3s, opacity 0.3s;
+        opacity: 0;
     }
 
     .menu-items.active {
@@ -101,19 +97,16 @@ a {
     }
 
     .menu-toggle.active .burger {
-        transform: rotate(90deg); /* Rotate the burger icon */
-        transition: transform 0.3s ease; /* Smooth transition for rotation */
+        transform: rotate(90deg);
+        transition: transform 0.3s ease;
     }
 
-    /* Adjusted padding for better readability */
     .text {
         padding: 0 20px;
-        text-overflow: initial; /* Ensure full text is visible */
+        text-overflow: initial;
     }
 }
 
-
-/* Desktop View */
 @media (min-width: 1025px) {
     .menu-toggle {
         display: none;
@@ -123,7 +116,6 @@ a {
         display: flex;
     }
 }
-
 
 .content {
     display: flex;
@@ -165,12 +157,12 @@ a {
 }
 
 .textbox {
-    width: 100%; /* Set width to 100% */
-    max-width: 2500px; /* Set a maximum width */
-    margin: 0 auto; /* Center the box horizontally */
+    width: 100%;
+    max-width: 2500px;
+    margin: 0 auto;
     background-color: #ffffff;
-    padding: 230px; /* Reduce padding for smaller screens */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+    padding: 230px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .textbox h2,
@@ -190,41 +182,38 @@ a {
     line-height: 1.6;
 }
 
-/* Media query for screens smaller than 768px (tablets and below) */
 @media (max-width: 768px) {
     .textbox {
-        padding: 10px; /* Adjust padding for smaller screens */
+        padding: 10px;
     }
 
     .textbox h2 {
-        font-size: 22px; /* Adjust heading font size */
+        font-size: 22px;
     }
 
     .textbox p {
-        font-size: 18px; /* Adjust paragraph font size */
+        font-size: 18px;
     }
 }
 
-/* Media query for screens smaller than 480px (phones) */
 @media (max-width: 480px) {
     .textbox {
-        padding: 20px; /* Further reduce padding for smaller screens */
+        padding: 20px;
     }
 
     .textbox h2 {
-        font-size: 20px; /* Further adjust heading font size */
+        font-size: 20px;
     }
 
     .textbox p {
-        font-size: 16px; /* Further adjust paragraph font size */
+        font-size: 16px;
     }
 }
-
 
 footer {
     background-color: rgba(255, 255, 255, 0.9);
     color: #666666;
-    padding: 40px 2%; /* Adjust padding as needed */
+    padding: 40px 2%;
     text-align: center;
     width: 100%;
     position: relative;
@@ -232,9 +221,8 @@ footer {
     z-index: 1;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: 15px;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box;
 }
-
 
 footer .footer-content {
     display: flex;
@@ -265,15 +253,10 @@ footer a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    z-index: 999; /* Ensure it's above everything else */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
-
-
-
-
-/* Center the recently-uploaded container */
 .recently-uploaded {
     margin-top: 300px;
     text-align: center;
@@ -282,90 +265,87 @@ footer a:hover {
 .recently-uploaded h2 {
     font-size: 24px;
     margin-bottom: 40px;
-    font-family: sans-serif; /* Set font family */
+    font-family: sans-serif;
 }
 
-/* Style for the upload container */
 .upload-container {
     display: inline-block;
-    margin-bottom: 20px; /* Add some space between the upload container and preview container */
-    text-align: center; /* Center the upload button */
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-/* Style for the upload label */
 .upload-label {
     position: relative;
     cursor: pointer;
 }
 
-/* Style for the cute upload button */
 .upload-button {
-    display: none; /* Hide the upload button by default */
+    display: none;
 }
 
-/* Style for the cute upload button */
 .upload-button-cute {
     display: inline-block;
-    width: 60px; /* Increase button size */
-    height: 60px; /* Increase button size */
-    background-color: #ffcc00; /* Yellow */
-    color: #ffffff; /* White */
+    width: 60px;
+    height: 60px;
+    background-color: #ffcc00;
+    color: #ffffff;
     border-radius: 50%;
     font-size: 24px;
     text-align: center;
-    line-height: 60px; /* Increase line height */
+    line-height: 60px;
     cursor: pointer;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
 
-/* Hover effect for the cute upload button */
 .upload-button-cute:hover {
-    background-color: #ffd633; /* Lighter yellow */
+    background-color: #ffd633;
 }
 
-/* Hide the preview container initially */
 .preview-container.hidden {
-    display: none; /* Hide the preview container by default */
+    display: none;
 }
 
-
-
-
-
-
-
-
-/* Style for the picture frame */
 .picture-frame {
-    width: 90vw; /* Set the width of the frame to 90% of the viewport width */
-    max-width: 1500px; /* Limit the maximum width of the frame */
-    margin: 0 auto; /* Center the frame horizontally */
-    border: 2px solid #ccc; /* Add border to frame */
-    border-radius: 15px; /* Add border-radius for soft curved edges */
-    overflow: hidden; /* Hide any content that overflows the frame */
-    padding-bottom: 1%; /* Maintain a 1:1 aspect ratio (square) */
-    position: relative; /* Establish relative positioning */
+    width: 90vw;
+    max-width: 1500px;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+    padding-bottom: 1%;
+    position: relative;
 }
 
 .recently-uploaded h3 {
     font-size: 19px;
     margin-bottom: 40px;
-    font-family: sans-serif; /* Set font family */
+    font-family: sans-serif;
 }
 
-/* Style for the image preview */
 .image-preview {
-    width: 100%; /* Ensure the image fills the frame */
-    height: 100%; /* Ensure the image fills the frame */
-    object-fit: cover; /* Cover the entire frame while maintaining aspect ratio */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Additional styles for responsiveness */
 .preview-container {
-    margin-top: 20px; /* Add some top margin */
+    margin-top: 20px;
 }
 
 .hidden {
-    display: none; /* Hide the preview container by default */
+    display: none;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.navbar.dark-mode {
+    background-color: #333333;
+}
+
+.menu-items.dark-mode .text {
+    color: #ffffff;
 }
