@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRS</title>
+  <link rel="icon" href="Shape.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="/">
+            <span class="logo">BadRobbie Studios</span>
+        </a>
+        
+          <div class="menu-toggle" id="toggle">
+              <div class="burger">&#9776;</div> <!-- Burger menu icon -->
+          </div>
+          <div class="menu-items">
+              <a href="index.html" class="text">Home</a> <!-- Removed .html extension -->
+              <a href="upload.html" class="text">Upload</a> <!-- Removed .html extension -->
+              <a href="archive.html" class="text">Archive</a> <!-- Removed .html extension -->
+             
+          </div>
+      </div>
+  </nav>
+  
+  
+  <div class="recently-uploaded">
+    <h2>Recently Uploaded</h2>
+    <div class="picture-frames">
+      <div class="picture-frame">
+        <img src="image1.png" alt="Image 1">
+      </div>
+      <div class="picture-frame">
+        <img src="image2.png" alt="Image 2">
+      </div>
+      <div class="picture-frame">
+        <img src="image3.png" alt="Image 3">
+      </div>
+    </div>
+  </div>
+  
+  
+   
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('toggle');
+    const menuItems = document.querySelector('.menu-items');
+    const overlay = document.querySelector('.overlay');
+
+    toggle.addEventListener('click', function() {
+      menuItems.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', function() {
+      menuItems.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+
+    // Add touch event listener for mobile devices
+    toggle.addEventListener('touchstart', function() {
+      menuItems.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+  });
+</script>
+
+  <div class="overlay"></div>
+
+</body>
+
+</html>
