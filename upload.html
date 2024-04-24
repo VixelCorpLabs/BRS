@@ -2,109 +2,115 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Upload - BRS</title>
-  <link rel="icon" href="Shape.png" type="image/png">
-  <link rel="stylesheet" href="upload.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload - BRS</title>
+    <link rel="icon" href="Shape.png" type="image/png">
+    <link rel="stylesheet" href="upload.css">
 </head>
 
 <body>
-    <nav class="navbar">
-      <div class="container">
-        <a href="index.html">
+  <nav class="navbar">
+    <div class="container">
+        <a href="/">
             <span class="logo">BadRobbie Studios</span>
         </a>
-        
-          <div class="menu-toggle" id="toggle">
-              <div class="burger">&#9776;</div> <!-- Burger menu icon -->
-          </div>
-          <div class="menu-items">
+        <div class="menu-toggle" id="toggle">
+            <div class="burger">&#9776;</div> <!-- Burger menu icon -->
+        </div>
+        <div class="menu-items">
             <a href="index.html" class="text">Home</a> <!-- Removed .html extension -->
             <a href="upload.html" class="text">Upload</a> <!-- Removed .html extension -->
             <a href="archive.html" class="text">Archive</a> <!-- Removed .html extension -->
-           
-          </div>
-      </div>
-  </nav>
-  
-  <div class="recently-uploaded">
-    <h2>Upload New Image</h2>
-
-    <form id="uploadForm">
-      <div class="upload-container">
-          <input type="file" id="image-upload" class="hidden" accept="image/*">
-          <label for="image-upload" class="upload-label">
-              <!-- Cute upload button -->
-              <div class="upload-button-container">
-                  <div class="upload-button-cute">+</div>
-              </div>
-          </label>
-      </div>
-      
-    </form>
-  
-    <div class="preview-container hidden">
-        <h3>Preview:</h3>
-        <div class="picture-frame">
-            <div id="image-preview" class="image-preview"></div>
+        </div>
+        <div class="dark-mode-toggle">
+            <button id="darkModeToggle" style="border: none; outline: none; background: transparent; font-size: 24px;">☀️</button>
         </div>
     </div>
-  </div>
-
-  <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const toggle = document.getElementById('toggle');
-    const menuItems = document.querySelector('.menu-items');
-    const overlay = document.querySelector('.overlay');
-    const fileInput = document.getElementById('image-upload');
-    const imagePreview = document.getElementById('image-preview');
-    const previewContainer = document.querySelector('.preview-container');
-    const uploadButton = document.querySelector('.upload-button-cute'); // Updated selector
-
-    toggle.addEventListener('click', function() {
-        menuItems.classList.toggle('active');
-        overlay.classList.toggle('active');
-    });
-
-    overlay.addEventListener('click', function() {
-        menuItems.classList.remove('active');
-        overlay.classList.remove('active');
-    });
-
-    // Add touch event listener for mobile devices
-    toggle.addEventListener('touchstart', function() {
-        menuItems.classList.toggle('active');
-        overlay.classList.toggle('active');
-    });
-
-    // Add file input change event listener for image preview and showing the upload button
-    fileInput.addEventListener('change', function() {
-        const file = this.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                imagePreview.innerHTML = '';
-                imagePreview.appendChild(img);
-                previewContainer.classList.remove('hidden');
-                uploadButton.style.display = 'inline-block'; // Show the upload button
-            }
-            reader.readAsDataURL(file);
-        } else {
-            imagePreview.innerHTML = '';
-            previewContainer.classList.add('hidden');
-            uploadButton.style.display = 'none'; // Hide the upload button if no image is selected
-        }
-    });
-});
+</nav>
 
 
-  </script>
+    <div class="recently-uploaded">
+        <h2>Upload New Image</h2>
 
-  <div class="overlay"></div>
+        <form id="uploadForm">
+            <div class="upload-container">
+                <input type="file" id="image-upload" class="hidden" accept="image/*">
+                <label for="image-upload" class="upload-label">
+                    <!-- Cute upload button -->
+                    <div class="upload-button-container">
+                        <div class="upload-button-cute">+</div>
+                    </div>
+                </label>
+            </div>
+
+        </form>
+
+        <div class="preview-container hidden">
+            <h3>Preview:</h3>
+            <div class="picture-frame">
+                <div id="image-preview" class="image-preview"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.getElementById('toggle');
+            const menuItems = document.querySelector('.menu-items');
+            const overlay = document.querySelector('.overlay');
+            const fileInput = document.getElementById('image-upload');
+            const imagePreview = document.getElementById('image-preview');
+            const previewContainer = document.querySelector('.preview-container');
+            const uploadButton = document.querySelector('.upload-button-cute'); // Updated selector
+
+            toggle.addEventListener('click', function () {
+                menuItems.classList.toggle('active');
+                overlay.classList.toggle('active');
+            });
+
+            overlay.addEventListener('click', function () {
+                menuItems.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+
+            // Add touch event listener for mobile devices
+            toggle.addEventListener('touchstart', function () {
+                menuItems.classList.toggle('active');
+                overlay.classList.toggle('active');
+            });
+
+            // Add file input change event listener for image preview and showing the upload button
+            fileInput.addEventListener('change', function () {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        imagePreview.innerHTML = '';
+                        imagePreview.appendChild(img);
+                        previewContainer.classList.remove('hidden');
+                        uploadButton.style.display = 'inline-block'; // Show the upload button
+                    }
+                    reader.readAsDataURL(file);
+                } else {
+                    imagePreview.innerHTML = '';
+                    previewContainer.classList.add('hidden');
+                    uploadButton.style.display = 'none'; // Hide the upload button if no image is selected
+                }
+            });
+
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            darkModeToggle.addEventListener('click', function () {
+                document.body.classList.toggle('dark-mode');
+            });
+        });
+    </script>
+
+    <div class="overlay"></div>
 
 </body>
 
 </html>
+
